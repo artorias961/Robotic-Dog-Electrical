@@ -14,5 +14,6 @@ These files aren't used until they're linked to the KiCad project. To link them 
 |---|---|---|
 | `Teensy-4_1/teensy_library` | Teensy symbols | [XenGi/teensy_library](https://github.com/XenGi/teensy_library) |
 | `Teensy-4_1/teensy.pretty` | Teensy footprints and 3D models | [XenGi/teensy.pretty](https://github.com/XenGi/teensy.pretty) |
-| `Adafruit-BNO08x/` | BNO085 9-DOF IMU breakout: KiCad import (symbols, footprints, project) and the original EagleCAD files | [adafruit/Adafruit-BNO08x-PCB](https://github.com/adafruit/Adafruit-BNO08x-PCB) |
-| `Adafruit-INA228/` | INA228 I2C power monitor breakout: KiCad import (symbols, footprints, project) and the original EagleCAD files | [adafruit/Adafruit-INA228-PCB](https://github.com/adafruit/Adafruit-INA228-PCB) |
+| `Adafruit-Modules/` | One-part symbols and footprints for the Adafruit breakouts (BNO085, INA228). This is what the project links. | Made from the Adafruit PCB files below |
+| `Adafruit-BNO08x/` | BNO085 9-DOF IMU breakout: KiCad import and the original EagleCAD files. Reference only, not linked. | [adafruit/Adafruit-BNO08x-PCB](https://github.com/adafruit/Adafruit-BNO08x-PCB) |
+| `Adafruit-INA228/` | INA228 I2C power monitor breakout: KiCad import and the original EagleCAD files. Reference only, not linked. | [adafruit/Adafruit-INA228-PCB](https://github.com/adafruit/Adafruit-INA228-PCB) |

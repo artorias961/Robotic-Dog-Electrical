@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1240" height="920" class="sch" viewBox="0 0 1240 920" role="img" aria-labelledby="sch-title sch-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="sch-title">Leg bench wiring schematic</title>
+<desc id="sch-desc">Teensy 4.1 pins 4, 5 and 6 drive the tilt, hip and knee servo signals. Pins 18 (SDA) and 19 (SCL) run to three Adafruit INA228 boards powered from the Teensy 3.3 V pin, at addresses 0x40, 0x41 and 0x44. Each board sits high side in one servo's power lead: the servo supply + goes to VIN+, through the board's 15 milliohm shunt to VIN-, and VIN- goes to the servo's V+. Arrows show the servo current. Each board's VBUS jumper ties VBUS to VIN+.</desc><style>svg{font-family:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace}.sheet{fill:#FFFFFF}.griddot{fill:#C9D3D9}.part{fill:#F8FAFB;stroke:#18222A;stroke-width:1.6}.board{fill:#EEF4F1}.tblock{fill:#FFFFFF;stroke:#18222A;stroke-width:1.2}.tbrule{stroke:#18222A;stroke-width:1;fill:none}.body{fill:#FFFFFF;stroke:#18222A;stroke-width:1.6}.ibody{stroke-width:1.2}.sj{fill:#BF1F2B}.w{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.int{stroke-width:1.2}.bar{stroke-width:2.6}.arrow{stroke:none}.c-i2c{stroke:#1D62C2}.c-p3{stroke:#B85200}.c-srv{stroke:#BF1F2B}.c-pwm{stroke:#7339CC}.c-gnd{stroke:#18222A}.c-nc{stroke:#5A6974}.f-i2c{fill:#1D62C2}.f-p3{fill:#B85200}.f-srv{fill:#BF1F2B}.f-pwm{fill:#7339CC}.f-gnd{fill:#18222A}text{fill:#18222A}.tm{fill:#5A6974}.tp3{fill:#B85200}.ti2c{fill:#1D62C2}.tsrv{fill:#BF1F2B}.tpwm{fill:#7339CC}</style>
+<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.9" class="griddot"/></pattern></defs>
+<rect class="sheet" x="0" y="0" width="1240" height="920"/>
+<rect fill="url(#grid)" x="0" y="0" width="1240" height="920"/>
+<rect class="tblock" x="884" y="24" width="332" height="92" rx="0"/>
+<rect class="part" x="40" y="90" width="190" height="560" rx="4"/>
+<rect class="part board" x="420" y="350" width="160" height="206" rx="4"/>
+<rect class="part servo" x="425" y="670" width="100" height="80" rx="4"/>
+<rect class="part board" x="700" y="350" width="160" height="206" rx="4"/>
+<rect class="part servo" x="705" y="670" width="100" height="80" rx="4"/>
+<rect class="part board" x="980" y="350" width="160" height="206" rx="4"/>
+<rect class="part servo" x="985" y="670" width="100" height="80" rx="4"/>
+<rect class="part" x="1135" y="775" width="95" height="80" rx="4"/>
+<path class="w int c-srv" d="M450 556L450 505L487 505"/>
+<path class="w int c-srv" d="M513 505L550 505L550 556"/>
+<path class="w int c-srv" d="M500 556L500 530L516 530"/>
+<path class="w int c-srv" d="M534 530L550 530"/>
+<path class="w int c-srv" d="M730 556L730 505L767 505"/>
+<path class="w int c-srv" d="M793 505L830 505L830 556"/>
+<path class="w int c-srv" d="M780 556L780 530L796 530"/>
+<path class="w int c-srv" d="M814 530L830 530"/>
+<path class="w int c-srv" d="M1010 556L1010 505L1047 505"/>
+<path class="w int c-srv" d="M1073 505L1110 505L1110 556"/>
+<path class="w int c-srv" d="M1060 556L1060 530L1076 530"/>
+<path class="w int c-srv" d="M1094 530L1110 530"/>
+<circle class="dot f-srv" cx="550" cy="530" r="3"/>
+<circle class="dot f-srv" cx="830" cy="530" r="3"/>
+<circle class="dot f-srv" cx="1110" cy="530" r="3"/>
+<path class="tbrule" d="M884 94H1216"/>
+<rect class="body ibody" x="487" y="499" width="26" height="12"/>
+<path class="sj" d="M516 526h7v8h-7zM527 526h7v8h-7zM523 528h4v4h-4z"/>
+<rect class="body ibody" x="767" y="499" width="26" height="12"/>
+<path class="sj" d="M796 526h7v8h-7zM807 526h7v8h-7zM803 528h4v4h-4z"/>
+<rect class="body ibody" x="1047" y="499" width="26" height="12"/>
+<path class="sj" d="M1076 526h7v8h-7zM1087 526h7v8h-7zM1083 528h4v4h-4z"/>
+<path class="w c-gnd" d="M230 610H252V622"/>
+<path class="w c-p3" d="M230 140H252V118"/>
+<path class="w c-i2c" d="M230 230H1110V350"/>
+<path class="w c-i2c" d="M230 270H1065V350"/>
+<path class="w c-p3" d="M445 350V312"/>
+<path class="w c-gnd" d="M420 400H404V410"/>
+<path class="w c-nc" d="M580 400H596"/>
+<path class="w c-i2c" d="M505 350V270"/>
+<path class="w c-i2c" d="M550 350V276A6 6 0 0 0 550 264V230"/>
+<path class="w c-srv" d="M550 556V810"/>
+<path class="w c-srv" d="M450 556V670"/>
+<path class="w c-gnd" d="M510 750V762"/>
+<path class="w c-p3" d="M725 350V312"/>
+<path class="w c-gnd" d="M700 400H684V410"/>
+<path class="w c-nc" d="M860 400H876"/>
+<path class="w c-i2c" d="M785 350V270"/>
+<path class="w c-i2c" d="M830 350V276A6 6 0 0 0 830 264V230"/>
+<path class="w c-srv" d="M830 556V810"/>
+<path class="w c-srv" d="M730 556V670"/>
+<path class="w c-gnd" d="M790 750V762"/>
+<path class="w c-p3" d="M1005 350V312"/>
+<path class="w c-gnd" d="M980 400H964V410"/>
+<path class="w c-nc" d="M1140 400H1156"/>
+<path class="w c-srv" d="M1110 556V810"/>
+<path class="w c-srv" d="M1010 556V670"/>
+<path class="w c-gnd" d="M1070 750V762"/>
+<path class="w c-srv" d="M550 810H1135"/>
+<path class="w c-gnd" d="M1135 840H1122V852"/>
+<path class="w c-pwm" d="M475 750V850H320V390H230"/>
+<path class="w c-pwm" d="M755 750V804A6 6 0 0 1 755 816V870H305V430H230"/>
+<path class="w c-pwm" d="M1035 750V804A6 6 0 0 1 1035 816V890H290V470H230"/>
+<circle class="dot f-i2c" cx="505" cy="270" r="4"/>
+<circle class="dot f-i2c" cx="550" cy="230" r="4"/>
+<circle class="dot f-i2c" cx="785" cy="270" r="4"/>
+<circle class="dot f-i2c" cx="830" cy="230" r="4"/>
+<circle class="dot f-srv" cx="830" cy="810" r="4"/>
+<circle class="dot f-srv" cx="1110" cy="810" r="4"/>
+<path class="arrow f-srv" d="M527 505L537 500.5L537 509.5Z"/>
+<path class="arrow f-srv" d="M550 635L545.5 645L554.5 645Z"/>
+<path class="arrow f-srv" d="M450 620L445.5 610L454.5 610Z"/>
+<path class="arrow f-srv" d="M807 505L817 500.5L817 509.5Z"/>
+<path class="arrow f-srv" d="M830 635L825.5 645L834.5 645Z"/>
+<path class="arrow f-srv" d="M730 620L725.5 610L734.5 610Z"/>
+<path class="arrow f-srv" d="M1087 505L1097 500.5L1097 509.5Z"/>
+<path class="arrow f-srv" d="M1110 635L1105.5 645L1114.5 645Z"/>
+<path class="arrow f-srv" d="M1010 620L1005.5 610L1014.5 610Z"/>
+<path class="arrow f-srv" d="M675 810L685 805.5L685 814.5Z"/>
+<path class="arrow f-srv" d="M955 810L965 805.5L965 814.5Z"/>
+<path class="arrow f-srv" d="M1070 810L1080 805.5L1080 814.5Z"/>
+<path class="w c-gnd" d="M242 622H262M245.5 627H258.5M249 632H255"/>
+<path class="w c-p3 bar" d="M243 118H261"/>
+<path class="w c-p3 bar" d="M436 312H454"/>
+<path class="w c-gnd" d="M394 410H414M397.5 415H410.5M401 420H407"/>
+<path class="w c-nc" d="M592 396L600 404M592 404L600 396"/>
+<path class="w c-gnd" d="M500 762H520M503.5 767H516.5M507 772H513"/>
+<path class="w c-p3 bar" d="M716 312H734"/>
+<path class="w c-gnd" d="M674 410H694M677.5 415H690.5M681 420H687"/>
+<path class="w c-nc" d="M872 396L880 404M872 404L880 396"/>
+<path class="w c-gnd" d="M780 762H800M783.5 767H796.5M787 772H793"/>
+<path class="w c-p3 bar" d="M996 312H1014"/>
+<path class="w c-gnd" d="M954 410H974M957.5 415H970.5M961 420H967"/>
+<path class="w c-nc" d="M1152 396L1160 404M1152 404L1160 396"/>
+<path class="w c-gnd" d="M1060 762H1080M1063.5 767H1076.5M1067 772H1073"/>
+<path class="w c-gnd" d="M1112 852H1132M1115.5 857H1128.5M1119 862H1125"/>
+<text class="t" x="896" y="46" font-size="13" text-anchor="start" font-weight="600">ROBOTIC DOG · LEG BENCH WIRING</text>
+<text class="tm" x="896" y="66" font-size="11" text-anchor="start">Teensy 4.1 · 3 servos · 3× Adafruit INA228</text>
+<text class="tm" x="896" y="84" font-size="11" text-anchor="start">I²C: SDA pin 18, SCL pin 19 · 0x40/41/44</text>
+<text class="tm" x="896" y="109" font-size="10" text-anchor="start">REV C · 2026-11-22 · SHEET 1 OF 1</text>
+<text class="t" x="135" y="116" font-size="14" text-anchor="middle" font-weight="600">TEENSY 4.1</text>
+<text class="tm" x="135" y="131" font-size="10" text-anchor="middle">U0 · leg controller</text>
+<text class="t" x="222" y="144" font-size="12" text-anchor="end" font-weight="500">3.3V</text>
+<text class="t" x="222" y="234" font-size="12" text-anchor="end" font-weight="500">18  SDA</text>
+<text class="t" x="222" y="274" font-size="12" text-anchor="end" font-weight="500">19  SCL</text>
+<text class="t" x="222" y="394" font-size="12" text-anchor="end" font-weight="500">4  PWM</text>
+<text class="t" x="222" y="434" font-size="12" text-anchor="end" font-weight="500">5  PWM</text>
+<text class="t" x="222" y="474" font-size="12" text-anchor="end" font-weight="500">6  PWM</text>
+<text class="t" x="222" y="614" font-size="12" text-anchor="end" font-weight="500">GND</text>
+<text class="tm" x="52" y="540" font-size="10" text-anchor="start">not on this sheet:</text>
+<text class="tm" x="52" y="556" font-size="10" text-anchor="start">14–16 joint position</text>
+<text class="tm" x="52" y="572" font-size="10" text-anchor="start">micro-USB console</text>
+<text class="tm" x="52" y="588" font-size="10" text-anchor="start">Ethernet to master</text>
+<text class="ti2c" x="262" y="224" font-size="11" text-anchor="start" font-weight="600">SDA</text>
+<text class="ti2c" x="262" y="264" font-size="11" text-anchor="start" font-weight="600">SCL</text>
+<text class="t" x="445" y="368" font-size="11" text-anchor="middle">VIN</text>
+<text class="t" x="505" y="368" font-size="11" text-anchor="middle">SCL</text>
+<text class="t" x="550" y="368" font-size="11" text-anchor="middle">SDA</text>
+<text class="t" x="428" y="404" font-size="11" text-anchor="start">GND</text>
+<text class="t" x="572" y="404" font-size="11" text-anchor="end">ALRT</text>
+<text class="t" x="454" y="548" font-size="10" text-anchor="start">VIN−</text>
+<text class="t" x="504" y="548" font-size="10" text-anchor="start">VBUS</text>
+<text class="t" x="554" y="548" font-size="10" text-anchor="start">VIN+</text>
+<text class="t" x="500" y="392" font-size="12" text-anchor="middle" font-weight="600">ADAFRUIT INA228</text>
+<text class="tm" x="500" y="428" font-size="11" text-anchor="middle">U1 · TILT</text>
+<text class="ti2c" x="500" y="448" font-size="13" text-anchor="middle" font-weight="600">0x40</text>
+<text class="tm" x="500" y="468" font-size="10" text-anchor="middle">A0 open · A1 open</text>
+<text class="tm" x="500" y="494" font-size="10" text-anchor="middle">15 mΩ shunt</text>
+<text class="tm" x="525" y="521" font-size="10" text-anchor="middle">SJ1</text>
+<text class="tm" x="500" y="572" font-size="10" text-anchor="middle">terminal block</text>
+<text class="t" x="475" y="714" font-size="11" text-anchor="middle" font-weight="600">TILT SERVO</text>
+<text class="t" x="450" y="688" font-size="10" text-anchor="middle">V+</text>
+<text class="t" x="475" y="742" font-size="10" text-anchor="middle">SIG</text>
+<text class="t" x="510" y="742" font-size="10" text-anchor="middle">GND</text>
+<text class="t" x="725" y="368" font-size="11" text-anchor="middle">VIN</text>
+<text class="t" x="785" y="368" font-size="11" text-anchor="middle">SCL</text>
+<text class="t" x="830" y="368" font-size="11" text-anchor="middle">SDA</text>
+<text class="t" x="708" y="404" font-size="11" text-anchor="start">GND</text>
+<text class="t" x="852" y="404" font-size="11" text-anchor="end">ALRT</text>
+<text class="t" x="734" y="548" font-size="10" text-anchor="start">VIN−</text>
+<text class="t" x="784" y="548" font-size="10" text-anchor="start">VBUS</text>
+<text class="t" x="834" y="548" font-size="10" text-anchor="start">VIN+</text>
+<text class="t" x="780" y="392" font-size="12" text-anchor="middle" font-weight="600">ADAFRUIT INA228</text>
+<text class="tm" x="780" y="428" font-size="11" text-anchor="middle">U2 · HIP</text>
+<text class="ti2c" x="780" y="448" font-size="13" text-anchor="middle" font-weight="600">0x41</text>
+<text class="tm" x="780" y="468" font-size="10" text-anchor="middle">A0 closed · A1 open</text>
+<text class="tm" x="780" y="494" font-size="10" text-anchor="middle">15 mΩ shunt</text>
+<text class="tm" x="805" y="521" font-size="10" text-anchor="middle">SJ1</text>
+<text class="tm" x="780" y="572" font-size="10" text-anchor="middle">terminal block</text>
+<text class="t" x="755" y="714" font-size="11" text-anchor="middle" font-weight="600">HIP SERVO</text>
+<text class="t" x="730" y="688" font-size="10" text-anchor="middle">V+</text>
+<text class="t" x="755" y="742" font-size="10" text-anchor="middle">SIG</text>
+<text class="t" x="790" y="742" font-size="10" text-anchor="middle">GND</text>
+<text class="t" x="1005" y="368" font-size="11" text-anchor="middle">VIN</text>
+<text class="t" x="1065" y="368" font-size="11" text-anchor="middle">SCL</text>
+<text class="t" x="1110" y="368" font-size="11" text-anchor="middle">SDA</text>
+<text class="t" x="988" y="404" font-size="11" text-anchor="start">GND</text>
+<text class="t" x="1132" y="404" font-size="11" text-anchor="end">ALRT</text>
+<text class="t" x="1014" y="548" font-size="10" text-anchor="start">VIN−</text>
+<text class="t" x="1064" y="548" font-size="10" text-anchor="start">VBUS</text>
+<text class="t" x="1114" y="548" font-size="10" text-anchor="start">VIN+</text>
+<text class="t" x="1060" y="392" font-size="12" text-anchor="middle" font-weight="600">ADAFRUIT INA228</text>
+<text class="tm" x="1060" y="428" font-size="11" text-anchor="middle">U3 · KNEE</text>
+<text class="ti2c" x="1060" y="448" font-size="13" text-anchor="middle" font-weight="600">0x44</text>
+<text class="tm" x="1060" y="468" font-size="10" text-anchor="middle">A0 open · A1 closed</text>
+<text class="tm" x="1060" y="494" font-size="10" text-anchor="middle">15 mΩ shunt</text>
+<text class="tm" x="1085" y="521" font-size="10" text-anchor="middle">SJ1</text>
+<text class="tm" x="1060" y="572" font-size="10" text-anchor="middle">terminal block</text>
+<text class="t" x="1035" y="714" font-size="11" text-anchor="middle" font-weight="600">KNEE SERVO</text>
+<text class="t" x="1010" y="688" font-size="10" text-anchor="middle">V+</text>
+<text class="t" x="1035" y="742" font-size="10" text-anchor="middle">SIG</text>
+<text class="t" x="1070" y="742" font-size="10" text-anchor="middle">GND</text>
+<text class="t" x="1182" y="793" font-size="11" text-anchor="middle" font-weight="600">SERVO SUPPLY</text>
+<text class="tsrv" x="1143" y="814" font-size="12" text-anchor="start" font-weight="600">+</text>
+<text class="t" x="1143" y="844" font-size="12" text-anchor="start" font-weight="600">−</text>
+<text class="tm" x="1190" y="828" font-size="9" text-anchor="middle">bench PSU</text>
+<text class="tm" x="1190" y="841" font-size="9" text-anchor="middle">or battery</text>
+<text class="tm" x="1182" y="872" font-size="10" text-anchor="middle">servo&#x27;s rated V</text>
+<text class="tsrv" x="558" y="804" font-size="11" text-anchor="start" font-weight="600">V_SERVO</text>
+<text class="tpwm" x="332" y="844" font-size="11" text-anchor="start" font-weight="600">PWM_TILT · pin 4</text>
+<text class="tpwm" x="490" y="864" font-size="11" text-anchor="start" font-weight="600">PWM_HIP · pin 5</text>
+<text class="tpwm" x="770" y="884" font-size="11" text-anchor="start" font-weight="600">PWM_KNEE · pin 6</text>
+<text class="tp3" x="252" y="111" font-size="10" text-anchor="middle" font-weight="600">+3V3</text>
+<text class="tp3" x="445" y="305" font-size="10" text-anchor="middle" font-weight="600">+3V3</text>
+<text class="tm" x="605" y="404" font-size="10" text-anchor="start">NC</text>
+<text class="tp3" x="725" y="305" font-size="10" text-anchor="middle" font-weight="600">+3V3</text>
+<text class="tm" x="885" y="404" font-size="10" text-anchor="start">NC</text>
+<text class="tp3" x="1005" y="305" font-size="10" text-anchor="middle" font-weight="600">+3V3</text>
+<text class="tm" x="1165" y="404" font-size="10" text-anchor="start">NC</text>
+</svg>

@@ -17,7 +17,7 @@ Master copies of the project's KiCad library tables. They point KiCad at the lib
    The Teensy footprints use this variable to find their 3D models.
 3. Open (or reopen) the project. The libraries show up under their nicknames in the symbol and footprint choosers (see **Current libraries**).
 
-> `${KIPRJMOD}` is the folder that contains the `.kicad_pro`. The paths assume the project sits one folder below `Dog-KiCAD/` (like `Dog-KiCAD/KiCAD/`). For a project one level deeper (like `KiCAD/main-leg/`), use `../../` instead of `../`, in the tables and in the text variable.
+> `${KIPRJMOD}` is the folder that contains the `.kicad_pro`. The paths assume the project sits one folder below `Dog-KiCAD/` (like `Dog-KiCAD/KiCAD/`). For a project one level deeper, use `../../` instead of `../`, in the tables and in the text variable. Current projects: `KiCAD/` (`main`) uses `../`, and `KiCAD/leg/` uses `../../`.
 
 ## Add another library
 
@@ -58,17 +58,15 @@ __THIRD_PARTY__/Adafruit-BNO08x/
 4. For the **KiCad Project Destination**, pick `__THIRD_PARTY__/<Part>/`.
 5. In the layer-mapping window, click **Auto-Match Layers**, then **OK**. Click **OK** on any warnings about layers that couldn't be matched.
 6. Save both windows that open (schematic and PCB) with **Ctrl+S**. Nothing is written until you do.
-7. Link the two new libraries with the steps in **Add another library**, using these nicknames:
-   - Symbols, `<name>-eagle-import.kicad_sym`: nickname `<name>-eagle-import`
-   - Footprints, `<name>-import-fps.pretty`: nickname `<name>`, without `-import-fps`. The imported symbols' Footprint fields use this name (for example `Adafruit_BNO08x:BNO080`), so the footprints link automatically.
+7. To place the whole breakout as one part, add a symbol and footprint for it to `Adafruit-Modules`. The steps are in [its README](../__THIRD_PARTY__/Adafruit-Modules/README.md). The import stays in its folder as the reference for pin positions.
+
+The import's own libraries (`<name>-eagle-import.kicad_sym` and `<name>-import-fps.pretty`) hold Adafruit's individual parts, such as the chip, capacitors and resistors, not one part for the breakout. They aren't linked in this project. Link them only if you want to put those parts directly on your own board. If you do, give the footprint library the nickname `<name>` (without `-import-fps`), because that's the name the imported symbols' Footprint fields use. The footprint folder only has the footprints used on Adafruit's board.
 
 Notes:
 
-- The `.pretty` folder only has the footprints used on Adafruit's board. Symbols for other package variants point to footprints that aren't there.
 - The import also creates a `.history/` folder and a `<name>.kicad_prl` file. Don't commit them: `.history/` is KiCad's local history and contains its own `.git` folder, and `.kicad_prl` holds your personal view settings.
 - KiCad can only import Eagle XML files (Eagle 6 and newer). Adafruit's files are XML.
 - Check the imported parts against the datasheet before using them. Imports can move silkscreen text, and they come without 3D models.
-- This gives you the parts used on the Adafruit board, such as the BNO085 chip. To place the whole breakout on your PCB the way the Teensy is placed, you need a module footprint (header pins and mounting holes), which these files don't include.
 - Adafruit's files are licensed CC BY-SA, so keep `license.txt` and the credit with them.
 
 ## Tips
@@ -80,8 +78,7 @@ Notes:
 
 ## Current libraries
 
-| Symbol nickname | Footprint nickname | Folder in `__THIRD_PARTY__/` |
+| Nickname (symbols and footprints) | Folder in `__THIRD_PARTY__/` | Parts |
 |---|---|---|
-| `teensy` | `teensy` | `Teensy-4_1/` |
-| `Adafruit_BNO08x-eagle-import` | `Adafruit_BNO08x` | `Adafruit-BNO08x/` |
-| `Adafruit INA228 I2C Power Monitor-eagle-import` | `Adafruit INA228 I2C Power Monitor` | `Adafruit-INA228/` |
+| `teensy` | `Teensy-4_1/` | Teensy boards (use `Teensy4.1` with footprint `Teensy41`) |
+| `Adafruit_Modules` | `Adafruit-Modules/` | `Adafruit_BNO085_Breakout`, `Adafruit_INA228_Breakout` |

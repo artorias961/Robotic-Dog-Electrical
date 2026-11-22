@@ -1,0 +1,5 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "teensy") (type "KiCad") (uri "${KIPRJMOD}/../../__THIRD_PARTY__/Teensy-4_1/teensy_library/teensy.kicad_sym") (options "") (descr "Teensy symbols (XenGi)"))
+	(lib (name "Adafruit_Modules") (type "KiCad") (uri "${KIPRJMOD}/../../__THIRD_PARTY__/Adafruit-Modules/Adafruit_Modules.kicad_sym") (options "") (descr "Adafruit breakouts as one-part modules"))
+)

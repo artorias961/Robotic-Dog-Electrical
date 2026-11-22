@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="240" class="sch loop" viewBox="0 0 680 240" role="img" aria-labelledby="loop-title loop-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="loop-title">One servo's power loop</title>
+<desc id="loop-desc">Servo supply + goes to the board's VIN+ terminal, through the 15 milliohm shunt to VIN-, then to the servo's red V+ wire. The servo's ground wire returns to supply -, which also joins the Teensy GND and the boards' GND. The board's VIN pad takes 3.3 V from the Teensy and carries no servo current.</desc><style>svg{font-family:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace}.sheet{fill:#FFFFFF}.griddot{fill:#C9D3D9}.part{fill:#F8FAFB;stroke:#18222A;stroke-width:1.6}.board{fill:#EEF4F1}.tblock{fill:#FFFFFF;stroke:#18222A;stroke-width:1.2}.tbrule{stroke:#18222A;stroke-width:1;fill:none}.body{fill:#FFFFFF;stroke:#18222A;stroke-width:1.6}.ibody{stroke-width:1.2}.sj{fill:#BF1F2B}.w{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.int{stroke-width:1.2}.bar{stroke-width:2.6}.arrow{stroke:none}.c-i2c{stroke:#1D62C2}.c-p3{stroke:#B85200}.c-srv{stroke:#BF1F2B}.c-pwm{stroke:#7339CC}.c-gnd{stroke:#18222A}.c-nc{stroke:#5A6974}.f-i2c{fill:#1D62C2}.f-p3{fill:#B85200}.f-srv{fill:#BF1F2B}.f-pwm{fill:#7339CC}.f-gnd{fill:#18222A}text{fill:#18222A}.tm{fill:#5A6974}.tp3{fill:#B85200}.ti2c{fill:#1D62C2}.tsrv{fill:#BF1F2B}.tpwm{fill:#7339CC}</style><rect class="sheet" x="0" y="0" width="680" height="240"/>
+<rect class="part" x="20" y="60" width="120" height="120" rx="4"/>
+<rect class="part board" x="220" y="50" width="220" height="80" rx="4"/>
+<rect class="part servo" x="530" y="60" width="130" height="120" rx="4"/>
+<rect class="part" x="350" y="196" width="100" height="28" rx="4"/>
+<path class="w int c-srv" d="M220 100L305 100"/>
+<path class="w int c-srv" d="M355 100L440 100"/>
+<rect class="body ibody" x="305" y="93" width="50" height="14"/>
+<path class="w c-p3" d="M240 50L240 30"/>
+<path class="w c-srv" d="M140 100L220 100"/>
+<path class="w c-srv" d="M440 100L530 100"/>
+<path class="w c-gnd" d="M530 160L140 160"/>
+<path class="w c-gnd" d="M400 160L400 196"/>
+<path class="w c-p3 bar" d="M231 30H249"/>
+<circle class="dot f-gnd" cx="400" cy="160" r="4"/>
+<path class="arrow f-srv" d="M185 100L175 95.5L175 104.5Z"/>
+<path class="arrow f-srv" d="M285 100L275 95.5L275 104.5Z"/>
+<path class="arrow f-srv" d="M490 100L480 95.5L480 104.5Z"/>
+<path class="arrow f-gnd" d="M480 160L490 155.5L490 164.5Z"/>
+<path class="arrow f-gnd" d="M175 160L185 155.5L185 164.5Z"/>
+<text class="t" x="80" y="84" font-size="12" text-anchor="middle" font-weight="600">SERVO SUPPLY</text>
+<text class="tsrv" x="128" y="105" font-size="14" text-anchor="end" font-weight="600">+</text>
+<text class="t" x="128" y="165" font-size="14" text-anchor="end" font-weight="600">−</text>
+<text class="tm" x="70" y="126" font-size="11" text-anchor="middle">bench PSU</text>
+<text class="tm" x="70" y="141" font-size="11" text-anchor="middle">or battery</text>
+<text class="t" x="330" y="72" font-size="12" text-anchor="middle" font-weight="600">ADAFRUIT INA228</text>
+<text class="t" x="240" y="66" font-size="11" text-anchor="middle">VIN</text>
+<text class="t" x="228" y="94" font-size="11" text-anchor="start">VIN+</text>
+<text class="t" x="432" y="94" font-size="11" text-anchor="end">VIN−</text>
+<text class="tm" x="330" y="122" font-size="11" text-anchor="middle">15 mΩ shunt</text>
+<text class="tp3" x="258" y="34" font-size="11" text-anchor="start" font-weight="600">VIN: 3.3 V from the Teensy, for the chip only</text>
+<text class="t" x="595" y="82" font-size="12" text-anchor="middle" font-weight="600">SERVO</text>
+<text class="t" x="538" y="105" font-size="11" text-anchor="start">V+ (red)</text>
+<text class="t" x="538" y="165" font-size="11" text-anchor="start">GND (brown)</text>
+<text class="t" x="400" y="214" font-size="11" text-anchor="middle" font-weight="600">TEENSY GND</text>
+<text class="tm" x="458" y="214" font-size="11" text-anchor="start">board GNDs join here too</text>
+<text class="tsrv" x="180" y="122" font-size="11" text-anchor="middle" font-weight="600">V_SERVO</text>
+<text class="tsrv" x="485" y="122" font-size="11" text-anchor="middle" font-weight="600">servo V+</text>
+<text class="t" x="250" y="180" font-size="11" text-anchor="middle">ground return</text>
+</svg>
