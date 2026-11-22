@@ -110,7 +110,7 @@ Without it, current still reads correctly, but voltage and power don't.
 
 ## What this was checked against
 
-- **Servo pins 4, 5, 6:** `submodule/legs/app.overlay` routes them to FlexPWM2 submodules 0, 1 and 2, output A (pads GPIO_EMC_06, GPIO_EMC_08 and GPIO_B0_10), at 50 Hz.
+- **Servo pins 4, 5, 6:** `submodule/Legs/app.overlay` routes them to FlexPWM2 submodules 0, 1 and 2, output A (pads GPIO_EMC_06, GPIO_EMC_08 and GPIO_B0_10), at 50 Hz.
 - **I²C pins 18 (SDA) and 19 (SCL):** Zephyr 4.4's `boards/pjrc/teensy4/teensy4-pinctrl.dtsi` puts LPI2C1 SDA on GPIO_AD_B1_01 (pin 18) and SCL on GPIO_AD_B1_00 (pin 19). Zephyr's INA228 driver (`ti,ina228`) needs `rshunt-micro-ohms = <15000>` for this board's shunt.
 - **Adafruit INA228 board:** Adafruit's PCB files (`Adafruit-INA228-PCB`, Eagle schematic) show no regulator or level shifter. They show the 10 kΩ SDA and SCL pull-ups to VIN, A0 and A1 jumpers to VIN with 10 kΩ pull-downs, the VBUS jumper between VBUS and VIN+, a 15 mΩ shunt between VIN+ and VIN−, 0.1 µF and 10 µF on VIN, and two STEMMA QT ports carrying GND, V+, SDA and SCL. The product page and learn guide give the 10 A rating, default address 0x40, and high-side wiring (VIN+ to the supply, VIN− to the load).
 - **INA228 chip:** TI datasheet SLYS021A (Rev. A, May 2022): addresses in Table 7-2, shunt input range in Electrical Characteristics (6.5), and pin functions in Table 5-1.
