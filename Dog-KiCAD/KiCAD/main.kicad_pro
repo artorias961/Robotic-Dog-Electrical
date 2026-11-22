@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "version": 1
+  },
+  "text_variables": {
+    "KICAD_USER_DIR": "${KIPRJMOD}/../__THIRD_PARTY__/Teensy-4_1"
+  }
+}

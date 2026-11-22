@@ -1,0 +1,11 @@
+# KiCad local history (each .history folder contains its own .git repo)
+.history/
+
+# Personal project settings (open files, view, layer visibility)
+*.kicad_prl
+
+# Caches, backups, autosaves and lock files
+fp-info-cache
+*-backups/
+_autosave-*
+*.lck

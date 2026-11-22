@@ -1,0 +1,6 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "teensy") (type "KiCad") (uri "${KIPRJMOD}/../__THIRD_PARTY__/Teensy-4_1/teensy.pretty") (options "") (descr "Teensy footprints (XenGi)"))
+	(lib (name "Adafruit_BNO08x") (type "KiCad") (uri "${KIPRJMOD}/../__THIRD_PARTY__/Adafruit-BNO08x/Adafruit_BNO08x-import-fps.pretty") (options "") (descr "Adafruit BNO08x footprints (Eagle import)"))
+	(lib (name "Adafruit INA228 I2C Power Monitor") (type "KiCad") (uri "${KIPRJMOD}/../__THIRD_PARTY__/Adafruit-INA228/Adafruit INA228 I2C Power Monitor-import-fps.pretty") (options "") (descr "Adafruit INA228 footprints (Eagle import)"))
+)
