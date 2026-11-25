@@ -11,7 +11,7 @@ The servo pins come from the legs firmware's `app.overlay`, the I²C pins from Z
 > **The 5 V servo supply also powers the Teensy.** It feeds the Teensy's VIN, and VIN takes 3.6–5.5 V. Keep the supply at 5 V. If your servos need more, power the Teensy separately and disconnect its VIN from the servo supply. See [Teensy power](#teensy-power).
 
 > [!IMPORTANT]
-> **The firmware doesn't use VBUS or ALRT yet.** `app.overlay` drives the servos on pins 4, 5 and 6 and reads current from the three boards, but it measures shunt voltage only and has nothing on pins 7–9. To read the supply voltage and power, change the INA228s' `adc-mode` to "Bus and shunt voltage continuous".
+> **The firmware's INA228 support hasn't run on hardware yet.** The legs firmware drives the servos on pins 4, 5 and 6, reads each board's current at 1 kHz and its VBUS, power, energy and charge at 10 Hz, and cuts the servos when an ALRT pin on 7, 8 or 9 trips. It builds, but none of this has been tested on a Teensy.
 
 ## Schematic
 
@@ -122,14 +122,9 @@ Without it, VBUS floats: current still reads correctly, but voltage and power do
 
 ## ALRT
 
-Each board's ALRT pin has its own Teensy pin: U2 goes to pin 7, U3 to pin 8 and U4 to pin 9 (`ALRT0` to `ALRT2`). The INA228 pulls ALRT low within about 75 µs when a reading crosses a limit the firmware sets, such as:
+Each board's ALRT pin has its own Teensy pin: U2 goes to pin 7, U3 to pin 8 and U4 to pin 9 (`ALRT0` to `ALRT2`). The INA228 pulls ALRT low when a reading crosses a limit set in its registers. The chip can also watch the supply voltage, the power and its own temperature (TI quotes an alert response of 75 µs).
 
-- too much current, for a stalled servo
-- the supply sagging
-- too much power
-- the chip getting too hot
-
-The firmware can then stop that servo without polling I²C. Reading the chip's `DIAG_ALRT` register shows which limit tripped.
+The firmware sets one limit per board: the joint's current limit, in either direction, compared on each averaged reading (every 0.8 ms), the same as its software check. The pin is latched, so a short trip isn't missed. The firmware reads the three pins every 1 ms without using I²C, so the trip still works if the bus is stuck. It then cuts the servos and latches a fault, and reads the chip's `DIAG_ALRT` register to log which limit tripped, which also releases the pin.
 
 - **ALRT is open-drain, and the board has no pull-up on it,** so R1, R2 and R3 (10 kΩ) pull each line up to 3.3 V.
 - **Pull ALRT up to 3.3 V, never 5 V.** The pin can't go above the board's VIN + 0.3 V.
@@ -153,7 +148,7 @@ The Teensy's VIN connects straight to the 5 V supply (`PowerSupply1+`). C1 (100 
 
 - **Servo pins 4, 5, 6:** `submodule/Legs/app.overlay` routes them to FlexPWM2 submodules 0, 1 and 2, output A (pads GPIO_EMC_06, GPIO_EMC_08 and GPIO_B0_10), at 50 Hz.
 - **I²C pins 18 (SDA) and 19 (SCL):** Zephyr 4.4's `boards/pjrc/teensy4/teensy4-pinctrl.dtsi` puts LPI2C1 SDA on GPIO_AD_B1_01 (pin 18) and SCL on GPIO_AD_B1_00 (pin 19). Zephyr's INA228 driver (`ti,ina228`) needs `rshunt-micro-ohms = <15000>` for this board's shunt.
-- **Firmware:** `app.overlay` turns on the three INA228s at `0x40`, `0x41` and `0x44` with `adc-mode = "Shunt voltage continuous"`, sends the console over USB (`cdc_acm_uart0`), and uses none of pins 7–9.
+- **Firmware:** `app.overlay` turns on the three INA228s at `0x40`, `0x41` and `0x44` with `adc-mode = "Bus and shunt voltage continuous"` (ADC_CONFIG B081h), watches the ALRT pins on 7, 8 and 9 (GPIO2 pins 17, 16 and 11), and sends the console over USB (`cdc_acm_uart0`). Zephyr's board files leave LPUART4 (Serial2, pins 7 and 8) off.
 - **Adafruit INA228 board:** Adafruit's PCB files (`Adafruit-INA228-PCB`, Eagle schematic) show no regulator or level shifter. They show the 10 kΩ SDA and SCL pull-ups to VIN, A0 and A1 jumpers to VIN with 10 kΩ pull-downs, the VBUS jumper between VBUS and VIN+, a 15 mΩ shunt between VIN+ and VIN−, 0.1 µF and 10 µF on VIN, and two STEMMA QT ports carrying GND, V+, SDA and SCL. ALRT runs only from the chip to header pin 8, with no pull-up. The product page and learn guide give the 10 A rating, default address 0x40, and high-side wiring (VIN+ to the supply, VIN− to the load).
 - **INA228 chip:** TI datasheet SLYS021A (Rev. A, May 2022):
   - Addresses: Table 7-2
